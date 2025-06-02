@@ -1,0 +1,126 @@
+/* Base styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff8f4;
+  color: #4d2c2c;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+header {
+  background: #ffd1dc;
+  padding: 2em;
+  text-align: center;
+  animation: fadeIn 2s ease-out;
+}
+
+nav {
+  background: #ffe5ec;
+  padding: 1em;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  animation: fadeIn 2.5s ease-out;
+}
+
+nav a {
+  color: #a05252;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+  color: #ff4e68;
+}
+
+main {
+  padding: 2em;
+}
+
+section {
+  margin-bottom: 3em;
+  animation: slideUp 1s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+section:nth-child(odd) {
+  animation-delay: 0.3s;
+}
+section:nth-child(even) {
+  animation-delay: 0.5s;
+}
+
+footer {
+  background: #ffd1dc;
+  text-align: center;
+  padding: 1em;
+  font-size: 0.9em;
+  animation: fadeIn 2.8s ease-out;
+}
+
+/* Countdown text */
+#countdown {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 1em;
+  color: #b22222;
+  animation: pulse 1.5s infinite alternate;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    color: #b22222;
+  }
+  to {
+    transform: scale(1.05);
+    color: #ff4e68;
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.8em;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 1em;
+  }
+
+  section {
+    font-size: 1em;
+  }
+
+  #countdown {
+    font-size: 1em;
+  }
+}
